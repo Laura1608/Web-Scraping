@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import numpy as np
 import pandas as pd
 
-# ### Obtain list of news from the coverpage
+## Obtaining a list of news from the coverpage of NOS.nl
 
 # url definition
 url = "https://nos.nl/"
@@ -32,7 +32,7 @@ len(coverpage_body)
 # Checking the first headline
 coverpage_body[0].get_text()
 
-# Creating a loop to extract all content
+## Creating a for loop to extract all content
 
 # Defining the number of articles
 number_of_articles = 10
@@ -48,7 +48,7 @@ for n in np.arange(0, number_of_articles):
     headline = coverpage_headlines[n].get_text()
     news_headlines.append(headline)
     
-    # Reading the content (divided in paragraphs)
+    # Getting the content (divided in paragraphs)
     content = coverpage_body[n].get_text()
     news_content.append(content)
 
